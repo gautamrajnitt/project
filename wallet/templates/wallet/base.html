@@ -1,0 +1,170 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Online Wallet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="Finance In Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="{% static 'wallet/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="{% static 'wallet/css/style.css' %}" type="text/css" media="all" />
+<!--// css -->
+<!-- font-awesome icons -->
+<link href="{% static 'wallet/css/font-awesome.css' %}" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- //font -->
+<script src="{% static 'wallet/js/jquery-1.11.1.min.js' %}"></script>
+<script src="{% static 'wallet/js/bootstrap.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+            
+            {% block navigation %}
+
+                	<!-- banner -->
+	<div class="banner">
+		<div class="header">
+			<div class="container">
+				<div class="header-left">
+					<div class="w3layouts-logo">
+						<h1>
+							<a href="/index">Online wallet</a>
+						</h1>
+					</div>
+					
+					<div class="clearfix"> </div>
+				</div>
+				<div class="top-nav">
+						<nav class="navbar navbar-default">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+										<span class="sr-only">Toggle navigation</span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+										<span class="icon-bar"></span>
+									</button>
+								</div>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav">
+									<li><a href="/index">Home</a></li>
+									<li><a href="/about">About</a></li>
+									{% if user.is_authenticated %}
+										<li><a href="#">Hey {{user.username}}</a></li>
+										<li><a href="/accounts/logout">Log Out</a></li>
+									{% else %}
+										<li><a href="/accounts/login">Log In</a></li>
+										<li><a href="/register">Register</a></li>
+									{% endif %}
+								</ul>	
+								<div class="clearfix"> </div>
+							</div>	
+						</nav>		
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+                {% endblock %}
+                <!-- endblock for header -->
+            {% block content %}
+            
+                <!-- here will be the main contents -->
+            {% endblock %}
+            <!-- Start Contact Area -->
+            {% block contact %}
+            <div class="address"> 
+                <div class="col-md-4 address-left">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fa fa-map-marker"></i> 123 San Sebastian, New York City USA.</li>
+                        <li><i class="fa fa-mobile"></i> 333 222 3333 </li>
+                        <li><i class="fa fa-phone"></i> +222 11 4444 </li>
+                        <li><i class="fa fa-envelope-o"></i> <a href="mailto:example@mail.com"> mail@example.com</a></li>
+                    </ul> 
+                </div>
+                <div class="col-md-8 address-right">  
+                    <h4>Subscribe</h4>
+                    <p>Subscribe to our email newsletter to receive updates</p>
+                    <form action="#" method="post"> 
+                        <input type="email" name="email" placeholder="Enter your Email..." required="">
+                        <input type="submit" value="Subscribe">
+                    </form>
+                    <div class="clearfix"> </div> 
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            {% endblock %}
+
+			
+        {% block footer %}
+
+        <div class="footer">
+			<div class="container">
+				<h3><a href="index.html">Finance In</a></h3>
+				<p>© 2017 Finance In. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+				<div class="social-icons">
+					<ul>
+						<li><a href="#" class="fa fa-facebook icon icon-border facebook"> </a></li>
+						<li><a href="#" class="fa fa-twitter icon icon-border twitter"> </a></li>
+						<li><a href="#" class="fa fa-google-plus icon icon-border googleplus"> </a></li>
+						<li><a href="#" class="fa fa-dribbble icon icon-border dribbble"> </a></li>
+						<li><a href="#" class="fa fa-rss icon icon-border rss"> </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+            
+        {% endblock %}
+
+      <!-- Endblock for Footer Area -->
+	<script src="{% static 'wallet/js/responsiveslides.min.js' %}"></script>
+	<script src="{% static 'wallet/js/jarallax.js' %}"></script>
+	<script src="{% static 'wallet/js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+
+	<script type="text/javascript" src="{% static 'wallet/js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'wallet/js/easing.js' %}"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+</body>	
+</html>
